@@ -4,7 +4,6 @@ description: This self-service project ports and optimizes the Arduino IDE—pat
 subjects:
 - Performance and Architecture
 - Migration to Arm
-- Libraries
 requires-team:
 - No
 platform:

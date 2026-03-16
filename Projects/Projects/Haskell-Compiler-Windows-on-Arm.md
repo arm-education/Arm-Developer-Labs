@@ -4,6 +4,7 @@ description: "This self-service project brings native Glasgow Haskell Compiler s
 subjects:
     - "Migration to Arm"
     - "Performance and Architecture"
+    - "Cloud AI"
 requires-team:
     - "No"
 platform:

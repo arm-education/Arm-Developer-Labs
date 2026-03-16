@@ -3,7 +3,6 @@ title: "Benchmarking Bioconda Packages for Arm64 in Bioinformatics Pipelines"
 description: "This self-service project benchmarks Arm64 Bioconda packages in real nf-core workflows—measuring performance, diagnosing build failures, and proposing fixes that accelerate truly native bioinformatics on the expanding fleet of Arm-powered machines."
 subjects:
     - "Performance and Architecture"
-    - "Databases"
 requires-team:
     - "No"
 platform:

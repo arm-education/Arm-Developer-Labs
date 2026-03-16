@@ -3,7 +3,7 @@ title: Develop a Novel Computational Photography Pipeline
 description: This project creates and implements a novel computational photography pipeline that is optimized for Arm-based mobile devices using SME2 and neural technology. This project comes with the possibility of a hardware donation to support your efforts
 subjects:
 - ML
-- Graphics
+- Mobile, Graphics, and Gaming
 - Edge AI
 requires-team:
 - No

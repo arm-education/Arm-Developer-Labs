@@ -15,8 +15,11 @@ type: article
     {{ content }}
 
     {%- if page.filter == "project" -%}
-      <!-- 1) Checkbox filters -->
-      <div class="subjects">
+      <!-- 1) Dropdown filter panel -->
+      <div class="filter-btn-row">
+        <button id="filter-toggle-btn" title="Filter projects"><i class="fas fa-sliders-h"></i></button>
+      </div>
+      <div class="subjects" id="filter-panel" style="display:none;">
         {%- assign nav_group = site.data.navigation["projects"] -%}
 
         <div class="search search--bright">
@@ -35,7 +38,7 @@ type: article
         </div>
 
         <!-- Platform -->
-        <div class="filter">
+       <!-- <div class="filter">
           <strong>Platform:</strong>
           {%- assign platforms = "" | split: "" -%}
           {%- for grp in nav_group -%}
@@ -53,70 +56,97 @@ type: article
               {{ platform }}
             </label>
           {%- endfor -%}
-        </div>
+        </div> -->
 
-        <!-- Subject -->
-        <div class="filter">
-          <strong>Subject:</strong>
-          {%- assign subjects = "" | split: "" -%}
-          {%- for grp in nav_group -%}
-            {%- for item in grp.children -%}
-              {%- for s in item.subjects -%}
-                {%- unless subjects contains s -%}
-                  {%- assign subjects = subjects | push: s -%}
-                {%- endunless -%}
+        <div class="filter-columns">
+
+          <!-- Subject -->
+          <div class="filter">
+            <strong>Subject:</strong>
+            {%- assign subjects = "" | split: "" -%}
+            {%- for grp in nav_group -%}
+              {%- for item in grp.children -%}
+                {%- for s in item.subjects -%}
+                  {%- unless subjects contains s -%}
+                    {%- assign subjects = subjects | push: s -%}
+                  {%- endunless -%}
+                {%- endfor -%}
               {%- endfor -%}
             {%- endfor -%}
-          {%- endfor -%}
-          {%- for subject in subjects -%}
-            <label>
-              <input type="checkbox" class="filter-checkbox" data-category="subject" value="{{ subject }}" onchange="filterProjects()">
-              {{ subject }}
-            </label>
-          {%- endfor -%}
-        </div>
+            <div class="filter-labels">
+            {%- for subject in subjects -%}
+              <label>
+                <input type="checkbox" class="filter-checkbox" data-category="subject" value="{{ subject }}" onchange="filterProjects()">
+                <span>{{ subject }}</span>
+              </label>
+            {%- endfor -%}
+            </div>
+          </div>
 
-        <!-- SW/HW -->
-        <div class="filter">
-          <strong>SW/HW:</strong>
-          {%- assign swhw_items = "" | split: "" -%}
-          {%- for grp in nav_group -%}
-            {%- for item in grp.children -%}
-              {%- for tag in item["sw-hw"] -%}
-                {%- unless swhw_items contains tag -%}
-                  {%- assign swhw_items = swhw_items | push: tag -%}
-                {%- endunless -%}
+          <!-- SW/HW -->
+         <!-- <div class="filter">
+            <strong>SW/HW:</strong>
+            {%- assign swhw_items = "" | split: "" -%}
+            {%- for grp in nav_group -%}
+              {%- for item in grp.children -%}
+                {%- for tag in item["sw-hw"] -%}
+                  {%- unless swhw_items contains tag -%}
+                    {%- assign swhw_items = swhw_items | push: tag -%}
+                  {%- endunless -%}
+                {%- endfor -%}
               {%- endfor -%}
             {%- endfor -%}
-          {%- endfor -%}
-          {%- for tag in swhw_items -%}
-            <label>
-              <input type="checkbox" class="filter-checkbox" data-category="sw-hw" value="{{ tag }}" onchange="filterProjects()">
-              {{ tag }}
-            </label>
-          {%- endfor -%}
-        </div>
+            {%- for tag in swhw_items -%}
+              <label>
+                <input type="checkbox" class="filter-checkbox" data-category="sw-hw" value="{{ tag }}" onchange="filterProjects()">
+                <span>{{ tag }}</span>
+              </label>
+            {%- endfor -%}
+          </div> -->
 
-        <!-- Support Level -->
-        <div class="filter">
-          <strong>Support Level:</strong>
-          {%- assign levels = "" | split: "" -%}
-          {%- for grp in nav_group -%}
-            {%- for item in grp.children -%}
-              {%- for lvl in item["support-level"] -%}
-                {%- unless levels contains lvl -%}
-                  {%- assign levels = levels | push: lvl -%}
-                {%- endunless -%}
+          <!-- Support Level -->
+          <div class="filter">
+            <strong>Support Level:</strong>
+            {%- assign levels = "" | split: "" -%}
+            {%- for grp in nav_group -%}
+              {%- for item in grp.children -%}
+                {%- for lvl in item["support-level"] -%}
+                  {%- unless levels contains lvl -%}
+                    {%- assign levels = levels | push: lvl -%}
+                  {%- endunless -%}
+                {%- endfor -%}
               {%- endfor -%}
             {%- endfor -%}
-          {%- endfor -%}
-          {%- for lvl in levels -%}
-            <label>
-              <input type="checkbox" class="filter-checkbox" data-category="support-level" value="{{ lvl }}" onchange="filterProjects()">
-              {{ lvl }}
-            </label>
-          {%- endfor -%}
-        </div>
+            <div class="filter-labels filter-labels--single">
+            {%- for lvl in levels -%}
+              <label>
+                <input type="checkbox" class="filter-checkbox" data-category="support-level" value="{{ lvl }}" onchange="filterProjects()">
+                <span>{{ lvl }}</span>
+              </label>
+            {%- endfor -%}
+            </div>
+          </div>
+
+        </div><!-- /.filter-columns -->
+          <script>
+            // Dropdown filter panel logic
+            const filterBtn = document.getElementById('filter-toggle-btn');
+            const filterPanel = document.getElementById('filter-panel');
+            function hasActiveFilters() {
+              return document.querySelectorAll('.filter-checkbox:checked').length > 0;
+            }
+            function updateFilterBtnState() {
+              const isOpen = filterPanel.style.display !== 'none';
+              filterBtn.classList.toggle('filter-btn--active', isOpen || hasActiveFilters());
+            }
+            if (filterBtn && filterPanel) {
+              filterBtn.addEventListener('click', function() {
+                const isOpen = filterPanel.style.display !== 'none';
+                filterPanel.style.display = isOpen ? 'none' : 'block';
+                updateFilterBtnState();
+              });
+            }
+          </script>
       </div>
 
       <!-- 2) Two‐section project list -->
@@ -213,6 +243,9 @@ type: article
 
         // Optional: re-run badge sort (doesn't hurt; keeps list stable)
         if (window.__arm_sortProjectLists) window.__arm_sortProjectLists();
+
+        // Keep filter button highlighted if filters are active
+        if (typeof updateFilterBtnState === 'function') updateFilterBtnState();
       }
       </script>
 

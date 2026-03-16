@@ -4,7 +4,6 @@ description: "This self-service project boosts the R ecosystem on Windows on Arm
 subjects:
     - "Performance and Architecture"
     - "Migration to Arm"
-    - "Libraries"
 requires-team:
     - "No"
 platform:

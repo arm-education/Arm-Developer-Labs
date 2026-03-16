@@ -2,10 +2,9 @@
 title: End-to-End Computer Vision System for Functional Safety
 description: This challenge will create and validate an Arm-based, smart camera pipeline on virtual automotive hardware—advancing safer, more developer-friendly driver-monitoring solutions for next-generation vehicles.
 subjects:
-- Security
 - Embedded Linux
 - ML
-- Virtual Hardware
+- Mobile, Graphics, and Gaming
 - Physical AI
 requires-team:
 - Yes

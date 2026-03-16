@@ -31,7 +31,8 @@ ALLOWED_SUBJECTS = {
     "AR-VR",
     "Edge AI",
     "Physical AI",
-    "Cloud AI"
+    "Cloud AI",
+    "Mobile, Graphics, and Gaming"
 }
 
 ALLOWED_REQUIRES_TEAM = {"Yes", "No"}
