@@ -63,6 +63,7 @@ type: article
           <!-- Subject -->
           <div class="filter">
             <strong>Subject:</strong>
+            {%- assign allowed_subjects = "Performance and Architecture|ML|Embedded Linux|Migration to Arm|Edge AI|Physical AI|Cloud AI|Mobile, Graphics, and Gaming|Libraries" | split: "|" -%}
             {%- assign subjects = "" | split: "" -%}
             {%- for grp in nav_group -%}
               {%- for item in grp.children -%}
@@ -74,11 +75,13 @@ type: article
               {%- endfor -%}
             {%- endfor -%}
             <div class="filter-labels">
-            {%- for subject in subjects -%}
-              <label>
-                <input type="checkbox" class="filter-checkbox" data-category="subject" value="{{ subject }}" onchange="filterProjects()">
-                <span>{{ subject }}</span>
-              </label>
+            {%- for subject in allowed_subjects -%}
+              {%- if subjects contains subject -%}
+                <label>
+                  <input type="checkbox" class="filter-checkbox" data-category="subject" value="{{ subject }}" onchange="filterProjects()">
+                  <span>{{ subject }}</span>
+                </label>
+              {%- endif -%}
             {%- endfor -%}
             </div>
           </div>
