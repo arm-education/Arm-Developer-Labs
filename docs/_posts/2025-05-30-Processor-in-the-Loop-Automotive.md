@@ -3,8 +3,6 @@ title: Processor in the Loop Automotive Controller on an Arm Cortex M7 Fast 
 description: Verify a Simulink automotive controller by running processor-in-the-loop (PIL) tests on a virtual Arm Cortex M7 processor.
 subjects:
 - Embedded Linux
-- RTOS Fundamentals
-- Virtual Hardware
 requires-team:
 - No
 platform:

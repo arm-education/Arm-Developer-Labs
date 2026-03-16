@@ -3,8 +3,7 @@ title: "On-Device LLMs for Real-Time NPC Interaction in Games"
 description: "This self-service project explores novel ways of integrating Large Language Models (LLMs) into real-time gameplay to drive dynamic Non-Playable Character (NPC) interactions."
 subjects:
     - "ML"
-    - "Gaming"
-    - "Graphics"
+    - "Mobile, Graphics, and Gaming"
     - "Edge AI"
 requires-team:
     - "No"

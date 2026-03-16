@@ -12,8 +12,8 @@ projects:
       \ with emerging algorithmic trends."
     url: /2025/05/30/Academic-Trends-Dashboard.html
     subjects:
-    - Web
-    - Databases
+    - Mobile, Graphics, and Gaming
+    - Cloud AI
     platform:
     - Servers and Cloud Computing
     - Laptops and Desktops
@@ -37,7 +37,6 @@ projects:
     - ML
     - Performance and Architecture
     - Embedded Linux
-    - RTOS Fundamentals
     - Edge AI
     - Physical AI
     platform:
@@ -122,7 +121,6 @@ projects:
     subjects:
     - Performance and Architecture
     - Migration to Arm
-    - Libraries
     platform:
     - Laptops and Desktops
     sw-hw:
@@ -140,7 +138,6 @@ projects:
     url: /2025/05/30/Bioinformatic-Pipeline-Analysis.html
     subjects:
     - Performance and Architecture
-    - Databases
     platform:
     - Servers and Cloud Computing
     - Laptops and Desktops
@@ -157,8 +154,6 @@ projects:
     url: /2025/05/30/Processor-in-the-Loop-Automotive.html
     subjects:
     - Embedded Linux
-    - RTOS Fundamentals
-    - Virtual Hardware
     platform:
     - Laptops and Desktops
     - Automotive
@@ -200,7 +195,7 @@ projects:
     url: /2025/05/30/Architecture-Insight-Dashboard.html
     subjects:
     - Performance and Architecture
-    - Web
+    - Mobile, Graphics, and Gaming
     platform:
     - Servers and Cloud Computing
     - Laptops and Desktops
@@ -220,7 +215,6 @@ projects:
     url: /2025/07/11/C-Based-Application-from-Scratch.html
     subjects:
     - Performance and Architecture
-    - Libraries
     platform:
     - IoT
     sw-hw:
@@ -238,9 +232,7 @@ projects:
     url: /2025/11/27/Game-Dev-Using-Neural-Graphics-&-Unreal-Engine.html
     subjects:
     - ML
-    - Gaming
-    - Libraries
-    - Graphics
+    - Mobile, Graphics, and Gaming
     - Edge AI
     platform:
     - Mobile, Graphics, and Gaming
@@ -307,7 +299,7 @@ projects:
     url: /2026/01/07/Computational-Photography.html
     subjects:
     - ML
-    - Graphics
+    - Mobile, Graphics, and Gaming
     - Edge AI
     platform:
     - Laptops and Desktops
@@ -330,7 +322,7 @@ projects:
     subjects:
     - ML
     - Performance and Architecture
-    - Libraries
+    - Mobile, Graphics, and Gaming
     - Edge AI
     platform:
     - Mobile, Graphics, and Gaming
@@ -372,7 +364,6 @@ projects:
     subjects:
     - Performance and Architecture
     - Migration to Arm
-    - Libraries
     platform:
     - Laptops and Desktops
     sw-hw:
@@ -392,6 +383,7 @@ projects:
     subjects:
     - Migration to Arm
     - Performance and Architecture
+    - Cloud AI
     platform:
     - Servers and Cloud Computing
     - Laptops and Desktops
@@ -411,7 +403,7 @@ projects:
       \ devices."
     url: /2025/05/30/AI-Powered-Porting-Tool.html
     subjects:
-    - CI-CD
+    - Mobile, Graphics, and Gaming
     - ML
     - Migration to Arm
     - Edge AI
@@ -434,8 +426,7 @@ projects:
     url: /2025/08/28/NPC-LLM-Runtime.html
     subjects:
     - ML
-    - Gaming
-    - Graphics
+    - Mobile, Graphics, and Gaming
     - Edge AI
     platform:
     - AI

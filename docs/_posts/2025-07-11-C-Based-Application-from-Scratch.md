@@ -3,7 +3,6 @@ title: Create a minimal C-Based Project for Raspberry Pi
 description: This self-service project goes back to the fundamentals. The challenge is to develop an application of your choice but your are only permitted to use the C language with as few dependencies as possible.
 subjects:
 - Performance and Architecture
-- Libraries
 requires-team:
 - No
 platform:

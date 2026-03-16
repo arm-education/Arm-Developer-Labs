@@ -4,7 +4,7 @@ description: "Leverage the latest SME2 (Scalable Matrix Extension 2) available o
 subjects:
   - "ML"
   - "Performance and Architecture"
-  - "Libraries"
+  - "Mobile, Graphics, and Gaming"
   - "Edge AI"
 requires-team:
   - "No"

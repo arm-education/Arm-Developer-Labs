@@ -3,9 +3,7 @@ title: Game development using Arm Neural Graphics with Unreal Engine
 description: Build a playable Unreal Engine 5 game demo that utilises Arm’s Neural Graphics SDK UE plugin for features such as Neural Super Sampling (NSS). Showcase improved graphical fidelity at lower resolution by driving neural rendering directly in the graphics pipeline.
 subjects:
 - ML
-- Gaming
-- Libraries
-- Graphics
+- Mobile, Graphics, and Gaming
 - Edge AI
 requires-team:
 - No
