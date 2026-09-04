@@ -309,7 +309,7 @@ html {
 .ch-accordion summary::after {
   content: "▾";
   margin-left: auto;
-  font-size: 12px;
+  font-size: 30px;
   opacity: 0.6;
   transition: transform 0.2s ease;
 }
@@ -570,6 +570,76 @@ html {
   z-index: 1;
 }
 
+.namma-challenge .ch-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.namma-challenge .ch-hero-copy {
+  min-width: 0;
+}
+
+.namma-challenge .ch-logo-row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.namma-challenge .ch-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  height: auto;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+
+  overflow: visible;
+}
+
+.namma-challenge .ch-logo img {
+  display: block;
+  width: auto;
+  height: auto;
+
+  max-height: 74px;
+
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.namma-challenge .ch-logo--wide img {
+  max-width: 330px;
+}
+
+
+
+.namma-challenge .ch-logo--iiitb img {
+  max-height: 150px;
+}
+
+@media (max-width: 1040px) {
+  .namma-challenge .ch-hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.85fr);
+    gap: 18px;
+  }
+
+  .namma-challenge .ch-logo-row {
+    justify-content: center;
+    max-width: 360px;
+    margin-left: auto;
+  }
+}
+
 .namma-challenge .ch-badge-dot {
   background: var(--purple-accent);
 }
@@ -695,7 +765,65 @@ html {
   font-weight: 800;
 }
 
+.namma-challenge .ch-problem-statements .ch-acc-body > h3 {
+  margin: 20px 0 8px;
+  color: var(--purple-dark);
+  font-size: 16px;
+}
+
+.namma-challenge .ch-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--purple-border);
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.namma-challenge .ch-table-scroll:focus-visible {
+  outline: 3px solid rgba(3, 102, 214, 0.28);
+  outline-offset: 2px;
+}
+
+.namma-challenge .ch-table-scroll .ch-table {
+  margin-top: 0;
+}
+
+.namma-challenge .ch-ps-table {
+  min-width: 760px;
+}
+
+.namma-challenge .ch-ps-checklist {
+  min-width: 980px;
+}
+
+.namma-challenge .ch-ps-table th,
+.namma-challenge .ch-ps-table td {
+  line-height: 1.4;
+  vertical-align: top;
+}
+
+.namma-challenge .ch-ps-evaluation th:nth-child(1),
+.namma-challenge .ch-ps-evaluation td:nth-child(1) {
+  width: 30%;
+}
+
+.namma-challenge .ch-ps-evaluation th:nth-child(2),
+.namma-challenge .ch-ps-evaluation td:nth-child(2) {
+  width: 10%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.namma-challenge .ch-ps-evaluation th:nth-child(3),
+.namma-challenge .ch-ps-evaluation td:nth-child(3) {
+  width: 60%;
+}
+
 /* Timeline emphasis without changing the table structure. */
+.namma-challenge .ch-timeline {
+  min-width: 700px;
+}
+
 .namma-challenge .ch-timeline td:first-child {
   color: var(--purple-dark);
   font-weight: 700;
@@ -821,6 +949,30 @@ html {
   .challenge-header h1 {
     font-size: 24px;
     margin: 8px 0;
+  }
+
+  .namma-challenge .ch-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .namma-challenge .ch-hero-layout > .ch-logo-row {
+    flex-direction: row !important;
+    justify-content: center;
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .namma-challenge .ch-logo {
+    height: 68px;
+  }
+
+  .namma-challenge .ch-hero-layout .ch-logo-row .ch-logo img {
+    width: auto !important;
+    height: auto !important;
+    max-height: 52px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
   }
 
   .ch-tagline {
@@ -1008,6 +1160,22 @@ html {
 
   .challenge-header h1 {
     font-size: 20px;
+  }
+
+  .namma-challenge .ch-hero-layout > .ch-logo-row {
+    flex-direction: row !important;
+  }
+
+  .namma-challenge .ch-logo {
+    max-width: 100%;
+  }
+
+  .namma-challenge .ch-hero-layout .ch-logo-row .ch-logo img {
+    max-height: 48px !important;
+  }
+
+  .namma-challenge .ch-logo--wide img {
+    max-width: min(252px, calc(100vw - 74px));
   }
 
   .ch-tagline {
@@ -1250,9 +1418,14 @@ html {
   color: var(--text-muted);
 }
 
-.bharat-2026-challenge .bharat-whats-new .phase-deliverables,
-.bharat-2026-challenge .bharat-pipeline .phase-deliverables {
+.bharat-2026-challenge .bharat-whats-new .phase-deliverables {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.bharat-2026-challenge .bharat-pipeline .phase-deliverables {
+  grid-template-columns: repeat(2, minmax(0, 316px));
+  justify-content: center;
   align-items: stretch;
 }
 
@@ -1541,6 +1714,67 @@ html {
   background: #292823;
   color: #fffaf2;
   box-shadow: inset 0 0 0 1px rgba(239, 191, 117, 0.18);
+}
+
+.bharat-2026-challenge .ch-register-cta {
+  margin: -44px 0 24px;
+}
+
+.bharat-2026-challenge #registration {
+  scroll-margin-top: 100px;
+}
+
+.bharat-2026-challenge .bharat-registration {
+  border-color: rgba(217, 154, 61, 0.58);
+  background:
+    radial-gradient(circle at 92% 12%, rgba(217, 154, 61, 0.14), transparent 30%),
+    linear-gradient(135deg, #20211e, #2c2b26);
+  box-shadow: inset 4px 0 0 #d99a3d,
+              0 10px 24px rgba(32, 32, 29, 0.18);
+}
+
+.bharat-2026-challenge .bharat-registration > h2 {
+  color: #fffaf2;
+}
+
+.bharat-2026-challenge .bharat-registration > h3 {
+  color: #efbf75;
+}
+
+.bharat-2026-challenge .bharat-registration > p,
+.bharat-2026-challenge .bharat-registration > ul li {
+  color: #f5eee4;
+}
+
+.bharat-2026-challenge .registration-form-wrapper {
+  border-color: rgba(217, 154, 61, 0.55);
+  background: #fffdfa;
+  box-shadow: inset 4px 0 0 rgba(217, 154, 61, 0.72),
+              0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.bharat-2026-challenge .registration-form-wrapper input[type="text"],
+.bharat-2026-challenge .registration-form-wrapper input[type="email"],
+.bharat-2026-challenge .registration-form-wrapper input[type="tel"],
+.bharat-2026-challenge .registration-form-wrapper select,
+.bharat-2026-challenge .registration-form-wrapper textarea {
+  border-color: #c9ad91 !important;
+}
+
+.bharat-2026-challenge .registration-form-wrapper input:focus,
+.bharat-2026-challenge .registration-form-wrapper select:focus,
+.bharat-2026-challenge .registration-form-wrapper textarea:focus {
+  outline: 2px solid rgba(182, 101, 38, 0.3) !important;
+  border-color: #b66526 !important;
+}
+
+.bharat-2026-challenge .registration-form-wrapper .mktoButton:hover {
+  background: #b66526 !important;
+}
+
+.bharat-2026-challenge .registration-form-wrapper .mktoButton:focus-visible {
+  outline: 3px solid rgba(217, 154, 61, 0.46);
+  outline-offset: 3px;
 }
 
 .bharat-2026-challenge .ch-register-button {
