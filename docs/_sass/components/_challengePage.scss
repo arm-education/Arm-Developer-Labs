@@ -1487,6 +1487,150 @@ html {
   color: var(--text-dark);
 }
 
+.bharat-2026-challenge .bharat-course-notice {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 28px 22px 56px;
+  border-color: #e5b765;
+  background: linear-gradient(110deg, #fff3de, #fffaf3 35%, #fffaf3 65%, #fff1da);
+  box-shadow: 0 4px 12px rgba(135, 87, 27, 0.1);
+}
+
+.bharat-2026-challenge .bharat-course-notice::before,
+.bharat-2026-challenge .bharat-course-notice::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 280px;
+  height: 340px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.bharat-2026-challenge .bharat-course-notice::before {
+  left: -160px;
+  top: -110px;
+  background: repeating-radial-gradient(ellipse at 0 100%, transparent 0 12px, rgba(214, 157, 62, 0.4) 12px 13px, transparent 13px 22px);
+  transform: rotate(-22deg);
+  mask-image: linear-gradient(to right, #000 50%, transparent);
+}
+
+.bharat-2026-challenge .bharat-course-notice::after {
+  right: -80px;
+  bottom: -150px;
+  background: repeating-radial-gradient(ellipse at 100% 0, transparent 0 12px, rgba(214, 157, 62, 0.4) 12px 13px, transparent 13px 22px);
+  transform: rotate(20deg);
+  mask-image: linear-gradient(to left, #000 50%, transparent);
+}
+
+.bharat-2026-challenge .bharat-course-content {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.bharat-2026-challenge .bharat-course-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #92500e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+}
+
+.bharat-2026-challenge .bharat-course-notice h2 {
+  margin: 0 0 6px;
+  padding: 0;
+  color: #211f1b;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.bharat-2026-challenge .bharat-course-notice h2::before {
+  content: none;
+}
+
+.bharat-2026-challenge .bharat-course-notice p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.bharat-2026-challenge a.bharat-course-link {
+  color: #087F8C;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bharat-2026-challenge a.bharat-course-link:hover,
+.bharat-2026-challenge a.bharat-course-link:focus {
+  color: #066570;
+}
+
+.bharat-2026-challenge .bharat-course-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 22px;
+  border: 1px solid rgba(121, 60, 8, 0.25);
+  border-radius: 14px;
+  background: #087F8C;
+  color: #fff !important;
+  box-shadow: 0 3px 7px rgba(112, 61, 13, 0.2);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bharat-2026-challenge .bharat-course-button svg {
+  flex-shrink: 0;
+}
+
+.bharat-2026-challenge .bharat-course-button:hover {
+  background: #066570;
+  color: #fff;
+  text-decoration: none;
+}
+
+.bharat-2026-challenge .bharat-course-notice a:focus-visible {
+  outline: 2px solid #85420c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 820px) {
+  .bharat-2026-challenge .bharat-course-notice {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .bharat-2026-challenge .bharat-course-notice::before,
+  .bharat-2026-challenge .bharat-course-notice::after {
+    opacity: 0.25;
+  }
+
+  .bharat-2026-challenge .bharat-course-notice h2 {
+    font-size: 20px;
+  }
+
+  .bharat-2026-challenge .bharat-course-button {
+    gap: 8px;
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+}
+
 .bharat-2026-challenge .phase-deliverable {
   border-color: var(--purple-border);
   background: #fbf7f1;
