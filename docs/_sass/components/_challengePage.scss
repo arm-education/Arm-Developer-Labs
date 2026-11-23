@@ -1487,6 +1487,35 @@ html {
   color: var(--text-dark);
 }
 
+.bharat-2026-challenge .bharat-submission-notice {
+  padding: 20px clamp(18px, 3vw, 28px);
+  border-left: 3px solid var(--purple-accent);
+  background: #fffaf2;
+  box-shadow: none;
+  overflow-wrap: anywhere;
+}
+
+.bharat-2026-challenge .bharat-submission-notice h2 {
+  margin: 0 0 8px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.bharat-2026-challenge .bharat-submission-notice h2::before {
+  content: none;
+}
+
+.bharat-2026-challenge .bharat-submission-notice p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.bharat-2026-challenge .bharat-submission-notice .bharat-submission-deadline {
+  margin-top: 10px;
+}
+
 .bharat-2026-challenge .bharat-course-notice {
   position: relative;
   isolation: isolate;
